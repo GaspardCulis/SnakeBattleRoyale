@@ -1,0 +1,12 @@
+# Import cache
+.import/
+
+# Binaries
+bin/
+build/
+lib/
+release/
+android/
+old_versions/
+assets/musics/
+addons/

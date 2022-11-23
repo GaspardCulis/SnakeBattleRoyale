@@ -1,0 +1,58 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://resources/colorGradient.tres" type="Gradient" id=1]
+[ext_resource path="res://resources/default_theme.tres" type="Theme" id=2]
+[ext_resource path="res://scenes/ColorPicker/ColorPicker.gd" type="Script" id=3]
+
+[sub_resource type="GradientTexture" id=1]
+gradient = ExtResource( 1 )
+width = 50
+
+[node name="ColorPicker" type="Panel"]
+margin_right = 448.0
+margin_bottom = 64.0
+theme = ExtResource( 2 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorGradient" type="TextureRect" parent="."]
+margin_left = 8.0
+margin_top = 16.0
+margin_right = 376.0
+margin_bottom = 40.0
+texture = SubResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSlider" type="HSlider" parent="."]
+margin_left = 8.0
+margin_top = 58.0
+margin_right = 376.0
+margin_bottom = 74.0
+rect_scale = Vector2( 1, -1.5 )
+min_value = 5.0
+max_value = 95.0
+value = 33.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Preview" type="Panel" parent="."]
+margin_left = 384.0
+margin_right = 448.0
+margin_bottom = 64.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Color" type="ColorRect" parent="Preview"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 56.0
+margin_bottom = 56.0
+
+[connection signal="value_changed" from="HSlider" to="." method="_on_HSlider_value_changed"]

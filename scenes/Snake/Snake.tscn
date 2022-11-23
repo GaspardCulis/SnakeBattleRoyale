@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/Snake/Snake.gd" type="Script" id=1]
+
+[node name="Snake" type="Node2D"]
+modulate = Color( 1.5, 1.5, 1.5, 1 )
+script = ExtResource( 1 )
+SPEED = 0.07
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="DeathTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="DeathParticles" type="Node2D" parent="."]

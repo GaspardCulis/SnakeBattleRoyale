@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scenes/Background/Background.gd" type="Script" id=1]
+[ext_resource path="res://assets/icons/Untitled.svg" type="Texture" id=2]
+
+[sub_resource type="PanoramaSky" id=1]
+
+[sub_resource type="Environment" id=2]
+resource_local_to_scene = true
+background_mode = 4
+background_sky = SubResource( 1 )
+ambient_light_energy = 0.0
+glow_enabled = true
+glow_blend_mode = 0
+glow_hdr_threshold = 2.0
+
+[node name="Background" type="Node2D"]
+script = ExtResource( 1 )
+BACKGROUND_COLOR = Color( 0.168627, 0.168627, 0.168627, 1 )
+
+[node name="BackGround" type="Sprite" parent="."]
+position = Vector2( 640, 360 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 2 )
+
+[node name="Snakes" type="Node2D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

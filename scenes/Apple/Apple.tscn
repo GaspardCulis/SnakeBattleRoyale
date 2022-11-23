@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/Apple/Apple.gd" type="Script" id=1]
+[ext_resource path="res://scenes/BoxParticles/BoxParticles.tscn" type="PackedScene" id=2]
+
+[node name="Apple" type="Node2D"]
+modulate = Color( 1.5, 1.5, 1.5, 1 )
+script = ExtResource( 1 )
+
+[node name="BoxParticles" parent="." instance=ExtResource( 2 )]
+position = Vector2( 5, 5 )
+autoYeet = false
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

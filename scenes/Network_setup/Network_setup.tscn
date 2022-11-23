@@ -1,0 +1,240 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://resources/default_theme.tres" type="Theme" id=1]
+[ext_resource path="res://scenes/Network_setup/Network_setup.gd" type="Script" id=2]
+[ext_resource path="res://scenes/ColorPicker/ColorPicker.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/fonts/BebasNeue-Regular.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://assets/icons/arrow.svg" type="Texture" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 52
+font_data = ExtResource( 4 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.305882, 0.305882, 0.305882, 1 )
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color( 0.733333, 0.733333, 0.733333, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="Network_setup" type="Panel"]
+anchor_right = 10.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 8.0
+margin_right = -11528.0
+margin_bottom = -8.0
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="Multiplayer_configure" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 47.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="Create_server" type="Button" parent="Multiplayer_configure"]
+margin_left = 436.0
+margin_top = 97.0
+margin_right = 820.0
+margin_bottom = 185.0
+focus_neighbour_left = NodePath("../../Back")
+focus_neighbour_right = NodePath("../SnakeColor/HSlider")
+focus_neighbour_bottom = NodePath("../Join_server")
+focus_next = NodePath("../Join_server")
+focus_previous = NodePath("../../Back")
+custom_fonts/font = SubResource( 1 )
+text = "Create server"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Join_server" type="Button" parent="Multiplayer_configure"]
+margin_left = 436.0
+margin_top = 233.0
+margin_right = 820.0
+margin_bottom = 321.0
+focus_neighbour_left = NodePath("../../Back")
+focus_neighbour_top = NodePath("../Create_server")
+focus_neighbour_right = NodePath("../SnakeColor/HSlider")
+focus_neighbour_bottom = NodePath("../server_ip")
+focus_next = NodePath("../server_ip")
+focus_previous = NodePath("../../Back")
+custom_fonts/font = SubResource( 1 )
+text = "Join server"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="server_ip" type="LineEdit" parent="Multiplayer_configure"]
+margin_left = 372.0
+margin_top = 401.0
+margin_right = 884.0
+margin_bottom = 457.0
+focus_neighbour_left = NodePath("../../Back")
+focus_neighbour_top = NodePath("../Join_server")
+focus_neighbour_right = NodePath("../SnakeColor/HSlider")
+focus_neighbour_bottom = NodePath("../server_port")
+focus_next = NodePath("../server_port")
+focus_previous = NodePath("../../Back")
+align = 1
+caret_blink = true
+caret_blink_speed = 0.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Hint" type="Label" parent="Multiplayer_configure/server_ip"]
+margin_left = 128.0
+margin_top = -40.0
+margin_right = 384.0
+margin_bottom = -1.0
+text = "SERVER IP"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="server_port" type="LineEdit" parent="Multiplayer_configure"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -192.0
+margin_top = 178.5
+margin_right = 192.0
+margin_bottom = 234.5
+focus_neighbour_left = NodePath("../../Back")
+focus_neighbour_top = NodePath("../server_ip")
+focus_neighbour_right = NodePath("../SnakeColor/HSlider")
+focus_next = NodePath("../SnakeColor")
+focus_previous = NodePath("../../Back")
+text = "4444"
+align = 1
+placeholder_text = "SERVER PORT"
+caret_blink = true
+caret_blink_speed = 0.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Hint" type="Label" parent="Multiplayer_configure/server_port"]
+margin_left = 120.0
+margin_top = -40.0
+margin_right = 264.0
+margin_bottom = -1.0
+text = "SERVER PORT"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SnakeColor" parent="Multiplayer_configure" instance=ExtResource( 3 )]
+margin_left = 1148.0
+margin_top = 121.0
+margin_right = 1596.0
+margin_bottom = 185.0
+rect_rotation = 90.0
+
+[node name="HSlider" parent="Multiplayer_configure/SnakeColor" index="1"]
+focus_neighbour_left = NodePath("../../Join_server")
+focus_neighbour_top = NodePath("../../Create_server")
+focus_neighbour_bottom = NodePath("../../server_port")
+focus_next = NodePath("../../Create_server")
+
+[node name="Label" type="Label" parent="Multiplayer_configure/SnakeColor"]
+margin_left = -56.0
+margin_top = 176.0
+margin_right = 232.0
+margin_bottom = 216.0
+rect_rotation = -90.0
+text = "PICK YOUR SNAKE COLOR"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -640.0
+margin_top = -78.0
+margin_right = 640.0
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Back" type="Button" parent="."]
+margin_left = 16.0
+margin_top = 608.0
+margin_right = 104.0
+margin_bottom = 680.0
+icon = ExtResource( 5 )
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Hint" type="Label" parent="Back"]
+margin_left = -24.0
+margin_top = -48.0
+margin_right = 120.0
+margin_bottom = -9.0
+text = "BACK"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ConnectionTimeout" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[node name="Error" type="Panel" parent="."]
+visible = false
+margin_left = 312.0
+margin_top = 240.0
+margin_right = 952.0
+margin_bottom = 496.0
+custom_styles/panel = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Error"]
+modulate = Color( 1, 0, 0, 1 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -176.0
+margin_top = -96.0
+margin_right = 176.0
+text = "CONNECTION FAILED"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="Multiplayer_configure/Create_server" to="." method="_on_Create_server_pressed"]
+[connection signal="pressed" from="Multiplayer_configure/Join_server" to="." method="_on_Join_server_pressed"]
+[connection signal="value_changed" from="Multiplayer_configure/SnakeColor" to="." method="_on_SnakeColor_value_changed"]
+[connection signal="pressed" from="Back" to="." method="_on_Back_pressed"]
+[connection signal="timeout" from="ConnectionTimeout" to="." method="_on_ConnectionTimeout_timeout"]
+
+[editable path="Multiplayer_configure/SnakeColor"]

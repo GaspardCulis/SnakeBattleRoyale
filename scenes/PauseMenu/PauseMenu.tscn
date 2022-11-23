@@ -1,0 +1,69 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://GUI/default_theme.tres" type="Theme" id=1]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.25098, 0.25098, 0.25098, 0.392157 )
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color( 0.435294, 0.435294, 0.435294, 0.392157 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="PauseMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 1.0
+margin_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+anchor_left = 0.35
+anchor_top = 0.222
+anchor_right = 0.649
+anchor_bottom = 0.799
+margin_left = -0.350037
+margin_top = -0.0620117
+margin_right = 0.63092
+margin_bottom = -0.0790405
+theme = ExtResource( 1 )
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Resume" type="Button" parent="Panel"]
+anchor_left = 0.166
+anchor_top = 0.077
+anchor_right = 0.835
+anchor_bottom = 0.231
+text = "RESUME"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Disconnect" type="Button" parent="Panel"]
+anchor_left = 0.166
+anchor_top = 0.384
+anchor_right = 0.835
+anchor_bottom = 0.538
+text = "DISCONNECT"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Quit" type="Button" parent="Panel"]
+anchor_left = 0.166
+anchor_top = 0.692
+anchor_right = 0.835
+anchor_bottom = 0.846
+text = "QUIT GAME"
+__meta__ = {
+"_edit_use_anchors_": false
+}
