@@ -9,7 +9,7 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "",
+"base": "EditorVCSInterface",
 "class": "GitAPI",
 "language": "NativeScript",
 "path": "res://addons/godot-git-plugin/git_api.gdns"
@@ -21,7 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Snake Battle Royale"
-run/main_scene="res://scenes/TitleScreen/TitleScreen.tscn"
+run/main_scene="res://scenes/UserInterface/TitleScreen/TitleScreen.tscn"
 config/icon="res://icon.png"
 config/windows_native_icon="res://icon.ico"
 config/quit_on_go_back=false
@@ -36,9 +36,11 @@ FPS="*res://scenes/FPS/FPS.tscn"
 
 [display]
 
-window/size/width=1280
-window/size/height=720
+window/size/width=2560
+window/size/height=1440
 window/size/resizable=false
+window/dpi/allow_hidpi=true
+window/vsync/use_vsync=false
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
 
@@ -49,7 +51,7 @@ version_control_plugin_name="GitAPI"
 
 [gdnative]
 
-singletons=[ "res://addons/godot-git-plugin/git_api.gdnlib" ]
+singletons=[  ]
 
 [importer_defaults]
 

@@ -9,11 +9,11 @@ func _process(delta):
 	
 
 func _on_Play_pressed():
-	get_tree().change_scene("res://scenes/Network_setup/Network_setup.tscn")
+	get_tree().change_scene("res://scenes/UserInterface/Network_setup/Network_setup.tscn")
 
 
 func _on_Settings_pressed():
-	get_tree().change_scene("res://scenes/Settings/Settings.tscn")
+	get_tree().change_scene("res://scenes/UserInterface/Settings/Settings.tscn")
 
 func _ready():
 	if OS.has_feature("Server"):

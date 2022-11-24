@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 export var BACKGROUND_COLOR:Color
 

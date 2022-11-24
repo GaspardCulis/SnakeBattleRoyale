@@ -1,6 +1,6 @@
 extends AudioStreamPlayer
 
-const NO_MUSIC_BCZ_LAW = true
+const NO_MUSIC_BCZ_LAW = false
 
 var titles = ["LEO", "DOOMROAR", "HYPERLIPS", "SHAP3S"]
 var old_title:String

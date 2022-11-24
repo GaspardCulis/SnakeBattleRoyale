@@ -14,16 +14,17 @@ glow_enabled = true
 glow_blend_mode = 0
 glow_hdr_threshold = 2.0
 
-[node name="Background" type="Node2D"]
+[node name="Background" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 script = ExtResource( 1 )
 BACKGROUND_COLOR = Color( 0.168627, 0.168627, 0.168627, 1 )
 
-[node name="BackGround" type="Sprite" parent="."]
-position = Vector2( 640, 360 )
+[node name="BackGround" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
 texture = ExtResource( 2 )
-__meta__ = {
-"_edit_lock_": true
-}
+expand = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 2 )
