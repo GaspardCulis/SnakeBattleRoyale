@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://resources/default_theme.tres" type="Theme" id=1]
 [ext_resource path="res://scenes/UserInterface/Network_setup/Network_setup.gd" type="Script" id=2]
@@ -34,6 +34,10 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
+[sub_resource type="DynamicFont" id=6]
+size = 52
+font_data = ExtResource( 4 )
+
 [node name="Network_setup" type="Panel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -57,10 +61,8 @@ margin_left = -0.936035
 margin_top = -0.0240173
 margin_right = 0.935913
 margin_bottom = 0.687012
-focus_neighbour_left = NodePath("../../Back")
 focus_neighbour_bottom = NodePath("../Join_server")
 focus_next = NodePath("../Join_server")
-focus_previous = NodePath("../../Back")
 custom_fonts/font = SubResource( 1 )
 text = "Create server"
 __meta__ = {
@@ -76,11 +78,9 @@ margin_left = -0.936035
 margin_top = -0.433044
 margin_right = 0.935913
 margin_bottom = -2.5
-focus_neighbour_left = NodePath("../../Back")
 focus_neighbour_top = NodePath("../Create_server")
 focus_neighbour_bottom = NodePath("../server_ip")
 focus_next = NodePath("../server_ip")
-focus_previous = NodePath("../../Back")
 custom_fonts/font = SubResource( 1 )
 text = "Join server"
 __meta__ = {
@@ -92,11 +92,9 @@ margin_left = 1018.0
 margin_top = 803.0
 margin_right = 1530.0
 margin_bottom = 859.0
-focus_neighbour_left = NodePath("../../Back")
 focus_neighbour_top = NodePath("../Join_server")
 focus_neighbour_bottom = NodePath("../server_port")
 focus_next = NodePath("../server_port")
-focus_previous = NodePath("../../Back")
 custom_fonts/font = SubResource( 4 )
 align = 1
 caret_blink = true
@@ -126,9 +124,7 @@ margin_left = -0.599976
 margin_top = 0.200928
 margin_right = 0.599854
 margin_bottom = -0.194092
-focus_neighbour_left = NodePath("../../Back")
 focus_neighbour_top = NodePath("../server_ip")
-focus_previous = NodePath("../../Back")
 custom_fonts/font = SubResource( 4 )
 text = "4444"
 align = 1
@@ -192,29 +188,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Back" type="Button" parent="."]
-anchor_left = 0.008
-anchor_top = 0.934
-anchor_right = 0.041
-anchor_bottom = 0.983
-margin_left = -0.480001
-margin_top = 0.0400391
-margin_right = 0.0399933
-margin_bottom = -0.52002
-icon = ExtResource( 5 )
-expand_icon = true
-
-[node name="Hint" type="Label" parent="Back"]
-margin_left = -24.0
-margin_top = -48.0
-margin_right = 120.0
-margin_bottom = -9.0
-text = "BACK"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="ConnectionTimeout" type="Timer" parent="."]
 wait_time = 5.0
 one_shot = true
@@ -246,8 +219,27 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Back" type="Button" parent="."]
+margin_left = 20.0
+margin_top = 1277.0
+margin_right = 140.0
+margin_bottom = 1390.0
+icon = ExtResource( 5 )
+expand_icon = true
+
+[node name="Hint" type="Label" parent="Back"]
+anchor_top = -0.575
+anchor_right = 0.967
+anchor_bottom = -0.018
+margin_top = -0.0249939
+margin_right = -0.0400085
+margin_bottom = 0.0340002
+custom_fonts/font = SubResource( 6 )
+text = "BACK"
+align = 1
+
 [connection signal="pressed" from="Multiplayer_configure/Create_server" to="." method="_on_Create_server_pressed"]
 [connection signal="pressed" from="Multiplayer_configure/Join_server" to="." method="_on_Join_server_pressed"]
 [connection signal="value_changed" from="Multiplayer_configure/ColorPicker" to="." method="_on_SnakeColor_value_changed"]
-[connection signal="pressed" from="Back" to="." method="_on_Back_pressed"]
 [connection signal="timeout" from="ConnectionTimeout" to="." method="_on_ConnectionTimeout_timeout"]
+[connection signal="pressed" from="Back" to="." method="_on_Back_pressed"]

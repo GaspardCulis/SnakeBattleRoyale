@@ -288,8 +288,7 @@ margin_right = 0.159973
 margin_bottom = 0.199982
 custom_styles/panel = SubResource( 2 )
 __meta__ = {
-"_edit_group_": true,
-"_edit_use_anchors_": false
+"_edit_group_": true
 }
 
 [node name="LineEdit" type="LineEdit" parent="HBoxContainer/Server/SnakeSize"]

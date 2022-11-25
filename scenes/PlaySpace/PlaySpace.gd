@@ -163,14 +163,14 @@ func _on_Resume_pressed():
 
 func _on_Disconnect_pressed():
 	get_tree().network_peer.close_connection()
-	get_tree().change_scene("res://scenes/Network_setup/Network_setup.tscn")
+	get_tree().change_scene("res://scenes/UserInterface/Network_setup/Network_setup.tscn")
 
 func _on_Quit_pressed():
 	Settings.save()
 	get_tree().quit()
 	
 func _on_ServerDead_Button_pressed():
-	get_tree().change_scene("res://scenes/Network_setup/Network_setup.tscn")
+	get_tree().change_scene("res://scenes/UserInterface/Network_setup/Network_setup.tscn")
 
 func togglePauseMenu():
 	$PauseMenu.visible = not $PauseMenu.visible

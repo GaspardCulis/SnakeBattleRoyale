@@ -1,11 +1,7 @@
-[gd_resource type="Theme" load_steps=17 format=2]
+[gd_resource type="Theme" load_steps=16 format=2]
 
 [ext_resource path="res://GUI/BebasNeue-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/fonts/BebasNeue-Regular.ttf" type="DynamicFontData" id=2]
-
-[sub_resource type="DynamicFont" id=13]
-size = 32
-font_data = ExtResource( 1 )
 
 [sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0.168627, 0.168627, 0.168627, 1 )
@@ -137,12 +133,11 @@ corner_radius_top_right = 10
 expand_margin_bottom = 4.0
 
 [sub_resource type="DynamicFont" id=16]
-size = 32
+size = 64
 font_data = ExtResource( 2 )
 
 [resource]
 default_font = SubResource( 16 )
-Button/fonts/font = SubResource( 13 )
 Button/styles/disabled = SubResource( 2 )
 Button/styles/focus = SubResource( 4 )
 Button/styles/hover = SubResource( 5 )
