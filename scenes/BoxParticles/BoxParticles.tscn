@@ -1,6 +1,9 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scenes/BoxParticles/BoxParticles.gd" type="Script" id=1]
+
+[sub_resource type="Curve" id=2]
+_data = [ Vector2( 0, 1 ), 0.0, -2.94546, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
 
 [sub_resource type="Gradient" id=1]
 offsets = PoolRealArray( 0, 0.9, 1 )
@@ -11,19 +14,18 @@ emitting = false
 amount = 40
 lifetime = 0.5
 one_shot = true
+speed_scale = 0.5
 explosiveness = 1.0
 lifetime_randomness = 0.2
 local_coords = false
-emission_shape = 2
-emission_rect_extents = Vector2( 5, 5 )
 spread = 180.0
 gravity = Vector2( 0, 0 )
-initial_velocity = 15.0
-initial_velocity_random = 0.2
-angular_velocity = 180.0
-angular_velocity_random = 1.0
-scale_amount = 5.0
-scale_amount_random = 1.0
+initial_velocity = 70.0
+initial_velocity_random = 1.0
+scale_amount = 10.0
+scale_amount_random = 0.51
+scale_amount_curve = SubResource( 2 )
 color = Color( 1, 0, 0, 1 )
 color_ramp = SubResource( 1 )
 script = ExtResource( 1 )
+autoYeet = false
